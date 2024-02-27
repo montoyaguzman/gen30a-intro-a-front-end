@@ -1,0 +1,33 @@
+numeros
+9
+10
+99
+100
+
+
+Liberar la libreria de colors
+    1.0.0
+    X (ERROR) => fucsia (#AA1314) -> fucsia (#DA1312)
+    1.0.1
+    - (NECESIDAD) => no existe el color beiige (#AF7112)
+    1.1.0
+    X (ERROR) => fussia (#AA1314) -> fucsia (#DA1312)
+    2.0.0
+
+GTA (San andreas)
+    3.0.0
+     ??? no se ven los coches mustang, solo se una marca negra
+    3.0.1
+     ??? el personaje de Juanito no se puede seleccionar
+    3.0.2
+     ??? inclusividad/diversidad juanitx
+    3.1.0
+    ...infinito
+    3.6.7
+        ?? la nueva temporada en linea no deja cobrar las recompensas
+    3.6.8
+
+Las personas que jugaban GTA ya se lo han terminado y el publico quiere ver
+escenarios, personajes y retos nuevos
+
+    4.0.0

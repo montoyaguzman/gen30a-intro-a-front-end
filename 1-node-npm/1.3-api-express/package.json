@@ -1,0 +1,19 @@
+{
+  "name": "1.3-api-express",
+  "version": "1.0.0",
+  "description": "ejemplo de api en express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "montoyaguzman7-devf",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0"
+  }
+}

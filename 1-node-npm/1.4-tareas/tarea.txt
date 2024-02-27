@@ -1,0 +1,3 @@
+1. Diferencia entre ~, ^, no poner nada.
+2. Agregar nodemon a la api.
+3. Que es Web component, custom tag y React.
