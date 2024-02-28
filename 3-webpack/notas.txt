@@ -1,5 +1,5 @@
 Panorama del uso de webpack
-
+https://www.youtube.com/watch?v=FMNuTj89RzU
 
 Repo de Montoya
 https://github.com/montoyaguzman/curso_webpac
