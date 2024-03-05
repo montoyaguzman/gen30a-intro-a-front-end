@@ -1,0 +1,22 @@
+article{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+article .img-avatar img{
+    border-radius: 50%;
+    width: 180px;
+}
+
+article .testimonial{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid lightgray;
+    padding: 30px;
+}
+
+article .testimonial p{
+    color: gray;
+}
