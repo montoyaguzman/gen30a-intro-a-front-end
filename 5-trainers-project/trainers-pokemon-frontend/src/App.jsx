@@ -7,7 +7,9 @@ import { Card } from './components/Card';
 function App() {
 
   const trainers = [
-
+    { name: 'ash ketchum', img: '' },
+    { name: 'misty', img: '' },
+    { name: 'brock', img: '' },
   ];
 
   // IF CASO 1
@@ -22,7 +24,7 @@ function App() {
 
   const listCard = () => {
     return trainers.map((element, index) => {
-      return (<Card name={element.name} image={element.img} />)
+      return (<Card key={index} name={element.name} image={element.img} />)
     })
   }
 
@@ -51,6 +53,14 @@ function App() {
         <Card/>
       </ListCard> */}
       {/*</> */}
+
+      {/* <Footer>
+        <LinkTrainer/>
+        <LinkTrainer/>
+      </Footer> 
+      children
+      */}
+
     </React.Fragment>
   );
 }
