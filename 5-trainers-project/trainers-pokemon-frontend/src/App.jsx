@@ -7,10 +7,28 @@ import { Card } from './components/Card';
 function App() {
 
   const trainers = [
-    { name: 'ash ketchum', img: '' },
-    { name: 'misty', img: '' },
-    { name: 'brock', img: '' },
+
   ];
+
+  // IF CASO 1
+  // let cardContent = null;
+  // if (trainers.length > 0) {
+  //   cardContent = trainers.map((element, index) => {
+  //     return (<Card name={element.name} image={element.img} />)
+  //   })
+  // } else {
+  //   cardContent = <h1>no hay entrenador disponibles...</h1>
+  // }
+
+  const listCard = () => {
+    return trainers.map((element, index) => {
+      return (<Card name={element.name} image={element.img} />)
+    })
+  }
+
+  const noData = () => {
+    return (<h1>no hay entrenador disponibles...</h1>)
+  }
 
   return (
     <React.Fragment>
@@ -22,10 +40,11 @@ function App() {
       <Card name={trainers[1].name} image={trainers[1].img} /> */}
 
       {/* array list de webcomponents */}
+      { /* IF CASO 1*/}
+      {/* {cardContent} */}
+
       {
-        trainers.map((element, index) => {
-          return (<Card name={element.name} image={element.img} />)
-        })
+        trainers.length > 0 ? listCard() : noData()
       }
 
       {/* <ListCard>
