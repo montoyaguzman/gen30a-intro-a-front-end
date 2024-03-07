@@ -1,0 +1,5 @@
+Tarea
+1. Investigar de forma teórica que es el useEffect de react y que diferencias tiene con el ciclo de vida de clases.
+2. Hacer una lista de los conceptos de React vistos en las últimas 2 clases.
+3. Repasar los fundamentos de React vistos en la clase 2 y 3 ya que en la siguiente clase haremos un proyecto que 
+conjuntara lo visto anteriormente.
