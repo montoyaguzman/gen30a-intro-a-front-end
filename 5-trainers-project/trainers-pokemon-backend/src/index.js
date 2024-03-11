@@ -24,12 +24,10 @@ app.get('/trainers', (req, res) => {
     return trainer.winnedTournaments.length > 0;
   });
 
-
   let data = trainers.filter(isLikeName);
 
   if (isChampion) {
     data = data.filter(hasWinnedTournaments);
-    console.log(data.length)
   }
 
   res.json(data);
