@@ -7,9 +7,35 @@ import { Card } from './components/Card';
 function App() {
 
   const trainers = [
-    { name: 'ash ketchum', img: '' },
-    { name: 'misty', img: '' },
-    { name: 'brock', img: '' },
+    {
+      name: 'ash ketchum',
+      img: '',
+      region: 'kanto',
+      rank: 1,
+      team: [
+        { pokemon: 'Pikachu', level: 50 },
+        { pokemon: 'Greninja', level: 40 }
+      ]
+    },
+    {
+      name: 'misty',
+      img: '',
+      region: 'kanto',
+      rank: 49,
+      team: [
+        { pokemon: 'Gyarados', level: 55 }
+      ]
+    },
+    {
+      name: 'brock',
+      img: '',
+      region: 'kanto',
+      rank: 45,
+      team: [
+        { pokemon: 'Geodude', level: 10 },
+        { pokemon: 'Onyx', level: 30 }
+      ]
+    },
   ];
 
   // IF CASO 1
