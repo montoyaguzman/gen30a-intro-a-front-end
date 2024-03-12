@@ -1,5 +1,6 @@
 import './index.css';
 import { SearchBar } from '../../components/SearchBar/';
+import { ListCard } from '../../components/ListCard/';
 import { Card } from '../../components/Card/';
 
 function Home() {
@@ -48,7 +49,16 @@ function Home() {
 
     const listCard = () => {
         return trainers.map((element, index) => {
-            return (<Card key={index} name={element.name} image={element.img} />)
+            return (
+                <Card
+                    key={index}
+                    name={element.name}
+                    image={element.img}
+                    region={element.region}
+                    rank={element.rank}
+                    team={element.team}
+                />
+            )
         })
     }
 
@@ -66,13 +76,28 @@ function Home() {
             { /* IF CASO 1*/}
             {/* {cardContent} */}
 
-            {
+            {/* {
                 trainers.length > 0 ? listCard() : noData()
-            }
+            } */}
 
-            {/* <ListCard>
-            <Card/>
-            </ListCard> */}
+            <ListCard>
+                {
+                    trainers.map((element, index) => {
+                        return (
+                            <Card
+                                key={index}
+                                name={element.name}
+                                image={element.img}
+                                region={element.region}
+                                rank={element.rank}
+                                team={element.team}
+                            />
+                        );
+                    })
+                }
+            </ListCard>
+
+
             {/*</> */}
 
             {/* <Footer>

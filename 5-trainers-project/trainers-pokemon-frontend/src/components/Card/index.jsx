@@ -1,9 +1,9 @@
 import './index.css';
 
-function Card({ name, pokemons }) {
-    // caso 3 function Card(props) {
+import defaultPhoto from '../../assets/img/default-photo.jpeg';
 
-    const nameComponent = 'card';
+function Card({ image, region, rank, name, team }) {
+    // caso 3 function Card(props) {
 
     // caso 1
     // props = { name, image };
@@ -15,16 +15,49 @@ function Card({ name, pokemons }) {
     // caso 3
     // const { name, pokemons } = props;
 
+    const imgStyles = {
+        width: '100%',
+        height: '100%',
+    };
+
     /** jsx code...*/
     return (
         <>
-            <h1>{nameComponent} works!</h1>
-            <img src="" alt="aqui va el entrenador.." width="200" height="200" />
-            <label>{name}</label>
-            {/* <label>{props.name}</label>
-            {props.pokemons}
-            {props.level}
-            {props.ranking} */}
+            <div className='container-card'>
+
+                <div className="image-trainer">
+                    <img src={image || defaultPhoto} alt="imagen del entrenador" />
+                </div>
+                <div className="card-content">
+                    <div className="stats">
+                        <p className="region-tag">{region}</p>
+                        <div className="rank">
+                            <p className="rank-label">rango</p>
+                            <p className="rank-tag">{rank}</p>
+                        </div>
+                    </div>
+                    <h2 className="title">{name}</h2>
+
+                    <div className="team">
+                        <h3 className="team-label">Equipo</h3>
+                        <div className="team-members">
+
+                            {team.map((element, index) => {
+                                return (
+                                    <div className="pokemon-tag" key={index}>
+                                        <p className="pokemon-tag--name">{element.pokemon}</p>
+                                        <p className="pokemon-tag--level">Nivel: {element.level}</p>
+                                    </div>
+                                );
+                            })}
+
+                        </div>
+                    </div>
+
+                    <a href="#" className="button-default">más información</a>
+
+                </div>
+            </div>
         </>
     );
 
