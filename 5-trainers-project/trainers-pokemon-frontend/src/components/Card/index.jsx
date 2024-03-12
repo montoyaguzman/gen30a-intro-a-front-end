@@ -3,6 +3,9 @@ import './index.css';
 import defaultPhoto from '../../assets/img/default-photo.jpeg';
 
 function Card({ image, region, rank, name, team }) {
+
+    console.log(image, region, rank, name, team)
+
     // caso 3 function Card(props) {
 
     // caso 1
@@ -26,7 +29,7 @@ function Card({ image, region, rank, name, team }) {
             <div className='container-card'>
 
                 <div className="image-trainer">
-                    <img src={image || defaultPhoto} alt="imagen del entrenador" />
+                    <img src={image || defaultPhoto} alt="imagen del entrenador" style={imgStyles} />
                 </div>
                 <div className="card-content">
                     <div className="stats">

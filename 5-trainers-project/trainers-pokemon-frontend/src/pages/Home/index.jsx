@@ -2,40 +2,35 @@ import './index.css';
 import { SearchBar } from '../../components/SearchBar/';
 import { ListCard } from '../../components/ListCard/';
 import { Card } from '../../components/Card/';
+import { getTrainers } from '../../services/trainers';
+import { useEffect, useState } from 'react';
 
 function Home() {
 
-    const trainers = [
-        {
-            name: 'ash ketchum',
-            img: '',
-            region: 'kanto',
-            rank: 1,
-            team: [
-                { pokemon: 'Pikachu', level: 50 },
-                { pokemon: 'Greninja', level: 40 }
-            ]
-        },
-        {
-            name: 'misty',
-            img: '',
-            region: 'kanto',
-            rank: 49,
-            team: [
-                { pokemon: 'Gyarados', level: 55 }
-            ]
-        },
-        {
-            name: 'brock',
-            img: '',
-            region: 'kanto',
-            rank: 45,
-            team: [
-                { pokemon: 'Geodude', level: 10 },
-                { pokemon: 'Onyx', level: 30 }
-            ]
-        },
-    ];
+    const [trainers, setTrainers] = useState();
+
+    // setTrainers(getTrainers()); // no work
+
+    const getData = async () => {
+        const newTrainers = await getTrainers();
+        setTrainers(newTrainers);
+    }
+
+    // 1. El callback se ejecuta solo en el primer render (didMount).
+    useEffect(() => {
+        console.log('Ejecutando el []')
+        getData();
+    }, []);
+
+    // 2. El callback se ejecuta la primera vez y cada que cambie algún valor dentro de las dependencias.
+    // useEffect(() => {
+    //     console.log('Ejecutando el trainers')
+    // }, [trainers]);
+
+    // 3. El callback se ejecuta en cada renderizado (mount, didMount).
+    useEffect(() => {
+        console.log('Ejecutando el -')
+    });
 
     // IF CASO 1
     // let cardContent = null;
@@ -54,7 +49,7 @@ function Home() {
                     key={index}
                     name={element.name}
                     image={element.img}
-                    region={element.region}
+                    region={element.region.name}
                     rank={element.rank}
                     team={element.team}
                 />
@@ -82,18 +77,19 @@ function Home() {
 
             <ListCard>
                 {
-                    trainers.map((element, index) => {
+                    trainers ? trainers.map((element, index) => {
                         return (
                             <Card
                                 key={index}
                                 name={element.name}
-                                image={element.img}
-                                region={element.region}
+                                image={element.imgs.card}
+                                region={element.region.name}
                                 rank={element.rank}
                                 team={element.team}
                             />
                         );
                     })
+                        : noData()
                 }
             </ListCard>
 
