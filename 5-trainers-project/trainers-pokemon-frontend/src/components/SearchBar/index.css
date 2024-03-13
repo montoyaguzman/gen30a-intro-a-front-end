@@ -1,0 +1,28 @@
+.container-form {
+    padding: 5px;
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.form-element {
+    display: grid;
+    width: 60%;
+    justify-items: center;
+    padding: 1rem 0 1rem;
+    gap: 0.8rem;
+}
+
+.radio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.trainer-name {
+    font-weight: bold;
+}
