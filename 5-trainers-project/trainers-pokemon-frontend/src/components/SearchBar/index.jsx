@@ -2,12 +2,26 @@ import './index.css';
 
 // import TuneIcon from '@mui/icons-material/Tune';
 
-function SearchBar() {
+function SearchBar({ handleParams }) {
 
     const handleForm = (event) => {
         event.preventDefault();
         // const name = document.querySelector('#trainer-name');
         // const isChampion = document.querySelector('#isChampion');
+
+        const formElement = event.target;
+        const formData = new FormData(formElement);
+
+        const trainerName = formData.get('trainer-name');
+        const isChampion = formData.get('isChampion');
+
+        const params = {
+            name: trainerName,
+            hasThropies: isChampion,
+        }
+
+        handleParams(params);
+
     }
 
     return (

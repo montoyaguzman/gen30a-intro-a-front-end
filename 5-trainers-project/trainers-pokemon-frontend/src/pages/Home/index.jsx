@@ -9,11 +9,12 @@ function Home() {
 
     const [trainers, setTrainers] = useState([]);
     const [counter, setCounter] = useState(0);
+    const [params, setParams] = useState({});
 
     // setTrainers(getTrainers()); // no work
 
-    const getData = async () => {
-        const newTrainers = await getTrainers();
+    const getData = async (params) => {
+        const newTrainers = await getTrainers(params);
         setTrainers(newTrainers);
     }
 
@@ -46,6 +47,10 @@ function Home() {
     //   cardContent = <h1>no hay entrenador disponibles...</h1>
     // }
 
+    useEffect(() => {
+        getData(params);
+    }, [params]);
+
     const listCard = () => {
         return trainers.map((element, index) => {
             return (
@@ -71,9 +76,13 @@ function Home() {
         setCounter(counter + 1)
     }
 
+    const handleParams = (params) => {
+        setParams(params);
+    }
+
     return (
         <>
-            <SearchBar />
+            <SearchBar handleParams={handleParams} />
             {/* <Card name={trainers[0].name} image={trainers[0].img} />
             <Card name={trainers[1].name} image={trainers[1].img} /> */}
 
