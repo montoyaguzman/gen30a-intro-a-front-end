@@ -1,0 +1,17 @@
+Agregar react roter dom
+
+1. Crear los componentes de c/pagina.
+2. Definir las rutas y el componente de c/u con useRoutes.
+3. Enlazar el router (paginas) al proyecto con BrowserRoutes.
+4. Crear el menu con ayuda del componente Link y su atributo to.
+5. Colocar el outlet/salida con <Routes />
+
+
+Llamado de un api
+
+1. Usar fetch
+2. Entender los hooks y el virtual DOM
+
+    * virtual DOM: Es un emulador del DOM de HTML en react para actualizar mas rapido la vista y que solo se actualice la parte de la pantalla que lo requiere.
+    * useState: permite el cambio de los valores de una variable
+    * useEffect: controla cuando cambian las variables
