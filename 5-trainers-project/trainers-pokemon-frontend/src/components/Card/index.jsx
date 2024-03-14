@@ -4,8 +4,6 @@ import defaultPhoto from '../../assets/img/default-photo.jpeg';
 
 function Card({ image, region, rank, name, team }) {
 
-    console.log(image, region, rank, name, team)
-
     // caso 3 function Card(props) {
 
     // caso 1

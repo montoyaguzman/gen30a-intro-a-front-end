@@ -7,7 +7,8 @@ import { useEffect, useState } from 'react';
 
 function Home() {
 
-    const [trainers, setTrainers] = useState();
+    const [trainers, setTrainers] = useState([]);
+    const [counter, setCounter] = useState(0);
 
     // setTrainers(getTrainers()); // no work
 
@@ -16,21 +17,24 @@ function Home() {
         setTrainers(newTrainers);
     }
 
-    // 1. El callback se ejecuta solo en el primer render (didMount).
+    // 1. El useEffect no tiene condiciones:
+    // ===> El callback se ejecuta en cada renderizado (mount, didMount).
     useEffect(() => {
-        console.log('Ejecutando el []')
+        console.log('Ejecutando el useEffect SIN CONDICIONES');
+    });
+
+    // 2. El useEffect tiene como condicion un []
+    // ===> El callback se ejecuta solo en el primer render (didMount).
+    useEffect(() => {
+        console.log('Ejecutando el useEffect cuando [] (la primera vez)')
         getData();
     }, []);
 
-    // 2. El callback se ejecuta la primera vez y cada que cambie algún valor dentro de las dependencias.
-    // useEffect(() => {
-    //     console.log('Ejecutando el trainers')
-    // }, [trainers]);
-
-    // 3. El callback se ejecuta en cada renderizado (mount, didMount).
+    // 3. El useEffect se ejecuta de acuerdo a sus condiciones
+    // ===> El callback se ejecuta la primera vez y cada que cambie algún valor dentro de las dependencias.
     useEffect(() => {
-        console.log('Ejecutando el -')
-    });
+        console.log('Ejecutando el useEffect cuando cambia counter')
+    }, [counter]);
 
     // IF CASO 1
     // let cardContent = null;
@@ -61,6 +65,12 @@ function Home() {
         return (<h1>no hay entrenador disponibles...</h1>)
     }
 
+
+    const handleNumber = () => {
+        // counter = counter + 1; // error
+        setCounter(counter + 1)
+    }
+
     return (
         <>
             <SearchBar />
@@ -74,6 +84,9 @@ function Home() {
             {/* {
                 trainers.length > 0 ? listCard() : noData()
             } */}
+
+            <button onClick={handleNumber}>Incrementar</button>
+            <span>El numero es: {counter}</span>
 
             <ListCard>
                 {
@@ -92,7 +105,6 @@ function Home() {
                         : noData()
                 }
             </ListCard>
-
 
             {/*</> */}
 
